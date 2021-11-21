@@ -1,26 +1,37 @@
-<h2>Log in</h2>
+<div class="container" style=" width: 70%; margin-left: 15%; margin-rigth:15%; margin-top: 20%;">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  <div class="row" style= "margin-top:2%;">
+    <div class="col-lg">
+      <div class="form-group">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder:"correo@ejemplo.com" %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+  <div class="row" style= "margin-top:2%;">
+    <div class="col-lg">
+      <div class="form-group">
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "password" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style= "margin-top:2%;">
+    <div class="col-lg">
+      <div class="form-group">
+        <div class="actions">
+          <%= f.submit "Log in", class: "btn btn-primary", style: "width: 100%;" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= render "devise/shared/links" %>
+  
+<% end %>
+  
+  
+
+</div>
