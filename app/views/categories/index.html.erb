@@ -1,0 +1,37 @@
+<div class="card" style="width: 90%; margin-left:5%; margin-right: 5%; margin-top: 5%;">
+  <div class="card-body">
+    <div class="row" style= "margin-top:2%;">
+        <div class="col-lg-10 col-sm-12">
+            <h5 class="card-title">Categorias principales</h5>
+        </div>
+        <div class="col-lg-2 col-sm-12">
+            <!--<a href="#" class="btn btn-primary">Scraper</a>-->
+            <%= form_with model: @scraper, url: '/categories-letgo/scraper' do |form| %>
+              <%= csrf_meta_tags %>
+
+
+                <%= form.submit 'Scraper', class:'btn btn-primary'%>
+            <% end %>
+        </div>
+    </div>
+    
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Categoria</th>
+      <th scope="col">Accion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+        <tr>
+            <td><%= category.id %></td>
+            <td><%= category.name %> %></td>
+            <td></td>
+        </tr>
+    <%end %>
+  </tbody>
+</table>
+  </div>
+</div>

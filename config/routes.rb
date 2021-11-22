@@ -8,4 +8,8 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'sessions#destroy'
   end
 
+  get '/categories-letgo', to: 'categories#index'
+
+  post '/categories-letgo/scraper', to: 'categories#scraper'
+
 end
